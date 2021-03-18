@@ -1,9 +1,12 @@
 import * as PIXI from "pixi.js";
+import { CanvasInteraction } from "./canvas-interaction";
 
 export class CanvasRenderer {
     private canvasContainer: PIXI.Container = new PIXI.Container();
-    private readonly renderer: PIXI.AbstractRenderer;
+    public readonly renderer: PIXI.AbstractRenderer;
     public ticker: PIXI.Ticker = new PIXI.Ticker();
+
+    public interaction: CanvasInteraction;
 
     constructor(private htmlElementRoot: HTMLElement, backgroundColor = 0x123465) {
 
@@ -15,6 +18,8 @@ export class CanvasRenderer {
             transparent: false,
             backgroundColor: backgroundColor
         });
+        this.interaction = new CanvasInteraction(this.renderer, htmlElementRoot);
+
         htmlElementRoot.appendChild(this.renderer.view);
         this.resize();
 
@@ -65,7 +70,6 @@ export class CanvasRenderer {
         this.renderer.resize(0, 0);
         const width = this.htmlElementRoot.clientWidth;
         const height = this.htmlElementRoot.scrollHeight;
-        console.log(height)
         this.renderer.resize(width, height);
     }
 }

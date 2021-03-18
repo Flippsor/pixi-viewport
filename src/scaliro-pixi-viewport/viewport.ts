@@ -1,19 +1,28 @@
 import * as PIXI from "pixi.js";
 import { CanvasRenderer } from "./canvas-renderer";
+import { ViewportDrag } from "./viewport-drag";
+import { ViewportZoom } from "./viewport-zoom";
+import { ViewportInteraction } from "./viewport-interaction";
 
 export class Viewport {
-    private scaleMin = 0.001;
-    private scaleMax = 10;
 
     private scaleContainers: PIXI.Container[] = [];
     private pixiContainer: PIXI.Container = new PIXI.Container();
     private ticker: PIXI.Ticker;
 
-    constructor(private canvasRenderer: CanvasRenderer) {
+    public interaction: ViewportInteraction;
+
+    constructor(private canvasRenderer: CanvasRenderer, private scaleMin: number = 0.001, private scaleMax: number = 10) {
         this.ticker = canvasRenderer.ticker;
         this.pixiContainer.sortableChildren = true;
         this.pixiContainer.scale.y = -1;
-        this.canvasRenderer.addContainer(this.pixiContainer, 0);
+        this.canvasRenderer.addContainer(this.pixiContainer, 5);
+
+        this.interaction = new ViewportInteraction(canvasRenderer, this.pixiContainer);
+        const drag = new ViewportDrag(canvasRenderer, this);
+        const zoom = new ViewportZoom(canvasRenderer, this);
+
+        this.translateToOrigin();
     }
 
     public scaleTo(value: number) {
@@ -46,7 +55,7 @@ export class Viewport {
         this.scaleContainers.push(container);
     }
 
-    public get scale(){
+    public get scale() {
         return this.pixiContainer.scale.x;
     }
 
@@ -55,7 +64,7 @@ export class Viewport {
         this.zoomBy(deltaPercent, { x: this.canvasRenderer.width / 2, y: this.canvasRenderer.height / 2 });
     }
 
-    public zoomBy(deltaPercent: number, zoomPointGlobal: {x: number, y: number}) {
+    public zoomBy(deltaPercent: number, zoomPointGlobal: { x: number, y: number }) {
         const newScale = this.scale * deltaPercent;
         const clampedDelta = this.clamp(newScale, this.scaleMin, this.scaleMax);
 
@@ -78,7 +87,7 @@ export class Viewport {
         return Math.min(Math.max(value, min), max);
     }
 
-    public zoomToRectangle(rectangle: {x: number, y: number, width: number, height: number}, marginInPercentage = 0.95) {
+    public zoomToRectangle(rectangle: { x: number, y: number, width: number, height: number }, marginInPercentage = 0.95) {
         const canvasWidth = this.canvasRenderer.width;
         const canvasHeight = this.canvasRenderer.height;
 
@@ -95,7 +104,7 @@ export class Viewport {
     }
 
     public translateToOrigin(margin = 100) {
-        this.scaleTo(1 / 55);
+        // this.scaleTo(1 / 55);
         this.translateTo({ x: margin, y: -margin + this.canvasRenderer.height });
     }
 
@@ -108,7 +117,7 @@ export class Viewport {
         this.pixiContainer.scale.y *= delta;
     }
 
-    private translateBy(x: number, y: number) {
+    public translateBy(x: number, y: number) {
         this.pixiContainer.x += x;
         this.pixiContainer.y += y;
     }
@@ -117,7 +126,7 @@ export class Viewport {
         this.pixiContainer.rotation += rotation;
     }
 
-    private translateTo(point: {x: number, y: number}) {
+    public translateTo(point: { x: number, y: number }) {
         this.pixiContainer.x = point.x;
         this.pixiContainer.y = point.y;
     }
