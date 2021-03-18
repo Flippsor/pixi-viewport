@@ -40,22 +40,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
         },
 
         plugins: [
-            new HtmlWebpackPlugin(),
-            new CopyPlugin({
-                patterns: [
-                    {
-                        from: "assets/**",
-
-                        // if there are nested subdirectories , keep the hierarchy
-                        transformPath(targetPath, absolutePath) {
-                            const assetsPath = path.resolve(__dirname, "assets");
-                            const endpPath = absolutePath.slice(assetsPath.length);
-
-                            return Promise.resolve(`assets/${endpPath}`);
-                        },
-                    },
-                ],
-            }),
+            new HtmlWebpackPlugin()
         ],
     };
     const envConfig = require(path.resolve(__dirname, `./webpack.${env.mode}.ts`))(env);
