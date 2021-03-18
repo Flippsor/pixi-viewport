@@ -1,0 +1,11 @@
+{
+  "name": "scaliro-viewport",
+  "version": "1.0.0",
+  "description": "Viewport for PIXI JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Flokko",
+  "license": "ISC"
+}
