@@ -1,10 +1,10 @@
-import { CanvasRenderer } from "./scaliro-pixi-viewport/canvas-renderer";
-import { Viewport } from "./scaliro-pixi-viewport/viewport";
+import { CanvasRenderer } from "./pixi-viewport/canvas-renderer";
+import { Viewport } from "./pixi-viewport/viewport";
 import * as PIXI from "pixi.js";
 import "./style.css";
-import { Overlay } from "./scaliro-pixi-viewport/overlay";
-import { GridContainer } from "./scaliro-pixi-viewport/grid-container";
-import { CoordinateOrigin } from "./scaliro-pixi-viewport/coordinate-origin";
+import { Overlay } from "./pixi-viewport/overlay";
+import { GridContainer } from "./pixi-viewport/grid-container";
+import { CoordinateOrigin } from "./pixi-viewport/coordinate-origin";
 
 window.onload = async () => {
     const renderer = new CanvasRenderer(document.body, 0x393939);

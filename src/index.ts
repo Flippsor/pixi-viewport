@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js";
 import "./style.css";
-import { CanvasRenderer } from "./scaliro-pixi-viewport/canvas-renderer";
-import { Viewport } from "./scaliro-pixi-viewport/viewport";
+import { CanvasRenderer } from "./pixi-viewport/canvas-renderer";
+import { Viewport } from "./pixi-viewport/viewport";
 
 window.onload = async (): Promise<void> => {
     const renderer = new CanvasRenderer(document.body, 0x393939);

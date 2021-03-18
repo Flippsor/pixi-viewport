@@ -1,5 +1,5 @@
 {
-  "name": "scaliro-viewport",
+  "name": "@flippsor/viewport",
   "version": "1.0.0",
   "description": "Viewport for PIXI JS",
   "main": "index.js",
@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Flokko",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
 }
