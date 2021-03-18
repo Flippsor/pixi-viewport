@@ -6,7 +6,6 @@
         "sourceMap": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "outDir": "src/scaliro-pixi-viewport"
     },
     "include": ["./src/index.ts"]
 }

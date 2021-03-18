@@ -10,7 +10,7 @@ export class CanvasRenderer {
 
     constructor(private htmlElementRoot: HTMLElement, backgroundColor = 0x123465) {
 
-        this.disableDefaultContextMenu(htmlElementRoot);
+        CanvasRenderer.disableDefaultContextMenu(htmlElementRoot);
 
         this.renderer = PIXI.autoDetectRenderer({
             width: 0, height: 0,
@@ -23,25 +23,25 @@ export class CanvasRenderer {
         htmlElementRoot.appendChild(this.renderer.view);
         this.resize();
 
-        this.ticker.add((event: any) => this.render());
+        this.ticker.add(() => this.render());
         this.startRenderer();
 
         this.canvasContainer.sortableChildren = true;
     }
 
-    public startRenderer() {
+    public startRenderer():void {
         this.ticker.start();
     }
 
-    public stopRenderer() {
+    public stopRenderer():void {
         this.ticker.stop();
     }
 
-    public get width(){
+    public get width():number{
         return this.renderer.width;
     }
 
-    public get height(){
+    public get height():number{
         return this.renderer.height;
     }
 
@@ -50,7 +50,7 @@ export class CanvasRenderer {
         this.canvasContainer.addChild(container);
     }
 
-    private disableDefaultContextMenu(htmlElementRoot: HTMLElement) {
+    private static disableDefaultContextMenu(htmlElementRoot: HTMLElement) {
         htmlElementRoot.addEventListener("contextmenu", (e) => {
             e.preventDefault();
         });

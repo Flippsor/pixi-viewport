@@ -9,12 +9,12 @@ export class Overlay {
         canvasRenderer.addContainer(this.pixiContainer, 20);
     }
 
-    public addContainer(container: PIXI.Container, layer = 0) {
+    public addContainer(container: PIXI.Container, layer = 0): void {
         container.zIndex = layer;
         this.pixiContainer.addChild(container);
     }
 
-    public removeContainer(container: PIXI.Container) {
+    public removeContainer(container: PIXI.Container): void {
         this.pixiContainer.removeChild(container);
     }
 }
