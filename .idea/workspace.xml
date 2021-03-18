@@ -22,13 +22,7 @@
     <list default="true" id="9bfc075f-512c-4bce-a183-0279cadd0a62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scaliro-pixi-viewport/canvas-renderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/canvas-renderer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scaliro-pixi-viewport/overlay.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/overlay.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport-interaction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport-interaction.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport-zoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport-zoom.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +64,28 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\S\Flippsor\pixi-viewport\src\scaliro-pixi-viewport" />
     </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build-for-npm" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-for-npm" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -125,5 +141,27 @@
     <MESSAGE value="project commit" />
     <MESSAGE value="Remove temp tests" />
     <option name="LAST_COMMIT_MESSAGE" value="Remove temp tests" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616073895921">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616073895921" />
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom" timestamp="1616073713701">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616073713701" />
+    <state width="2539" height="401" key="GridCell.Tab.0.center" timestamp="1616073713701">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.center/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616073713701" />
+    <state width="2539" height="401" key="GridCell.Tab.0.left" timestamp="1616073713701">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.left/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616073713701" />
+    <state width="2539" height="401" key="GridCell.Tab.0.right" timestamp="1616073713701">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.right/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616073713701" />
   </component>
 </project>
