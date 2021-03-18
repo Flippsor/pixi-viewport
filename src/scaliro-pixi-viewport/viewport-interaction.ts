@@ -1,4 +1,4 @@
-import {Observable, Subject} from 'rxjs';
+import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import { MouseEventArgs } from "./mouse-event-args";
 import { WheelEventArgs } from "./wheel-event-args";

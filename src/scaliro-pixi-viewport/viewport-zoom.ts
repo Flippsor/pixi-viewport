@@ -10,11 +10,11 @@ export class ViewportZoom {
 
     constructor(canvasRenderer: CanvasRenderer, private viewport: Viewport) {
 
-        canvasRenderer.ticker.add((delta: any) => this.onTimerTick(delta));
+        canvasRenderer.ticker.add(() => this.onTimerTick());
         canvasRenderer.interaction.onMouseWheel$.subscribe((event: WheelEventArgs) => this._mouseWheelHandler(event));
     }
 
-    private onTimerTick(deltaTime: number): void {
+    private onTimerTick(): void {
 
         if (this._zoomDirty) {
             this.viewport.zoomBy(this._scale, this._zoomPoint);

@@ -19,20 +19,20 @@ export class Viewport {
         this.canvasRenderer.addContainer(this.pixiContainer, 5);
 
         this.interaction = new ViewportInteraction(canvasRenderer, this.pixiContainer);
-        const drag = new ViewportDrag(canvasRenderer, this);
-        const zoom = new ViewportZoom(canvasRenderer, this);
+        new ViewportDrag(canvasRenderer, this);
+        new ViewportZoom(canvasRenderer, this);
 
         this.translateToOrigin();
     }
 
-    public scaleTo(value: number) {
+    public scaleTo(value: number): void {
         this.pixiContainer.scale.set(value, -value);
         for (const scaleContainer of this.scaleContainers) {
             scaleContainer.scale.set(1 / value, 1 / value);
         }
     }
 
-    public scaleBy(delta: number) {
+    public scaleBy(delta: number): void {
         this.scaleContainerBy(delta);
         for (const scaleContainer of this.scaleContainers) {
             scaleContainer.scale.x *= 1 / delta;
@@ -40,31 +40,31 @@ export class Viewport {
         }
     }
 
-    public addContainer(container: PIXI.Container, layer = 0) {
+    public addContainer(container: PIXI.Container, layer = 0) : void{
         container.zIndex = layer;
         this.pixiContainer.addChild(container);
     }
 
-    public removeContainer(container: PIXI.Container) {
+    public removeContainer(container: PIXI.Container): void {
         this.pixiContainer.removeChild(container);
     }
 
-    public addScaleInvariantContainer(container: PIXI.Container, layer: number) {
+    public addScaleInvariantContainer(container: PIXI.Container, layer: number): void {
         container.scale.set(1 / this.pixiContainer.scale.x, 1 / this.pixiContainer.scale.x);
         this.addContainer(container, layer);
         this.scaleContainers.push(container);
     }
 
-    public get scale() {
+    public get scale(): number {
         return this.pixiContainer.scale.x;
     }
 
 
-    public zoomAroundCenterBy(deltaPercent: number) {
+    public zoomAroundCenterBy(deltaPercent: number): void {
         this.zoomBy(deltaPercent, { x: this.canvasRenderer.width / 2, y: this.canvasRenderer.height / 2 });
     }
 
-    public zoomBy(deltaPercent: number, zoomPointGlobal: { x: number, y: number }) {
+    public zoomBy(deltaPercent: number, zoomPointGlobal: { x: number, y: number }): void {
         const newScale = this.scale * deltaPercent;
         const clampedDelta = this.clamp(newScale, this.scaleMin, this.scaleMax);
 
@@ -87,7 +87,7 @@ export class Viewport {
         return Math.min(Math.max(value, min), max);
     }
 
-    public zoomToRectangle(rectangle: { x: number, y: number, width: number, height: number }, marginInPercentage = 0.95) {
+    public zoomToRectangle(rectangle: { x: number, y: number, width: number, height: number }, marginInPercentage = 0.95): void {
         const canvasWidth = this.canvasRenderer.width;
         const canvasHeight = this.canvasRenderer.height;
 
@@ -103,7 +103,7 @@ export class Viewport {
         this.zoomAroundCenterBy(scaleMin * marginInPercentage);
     }
 
-    public translateToOrigin(margin = 100) {
+    public translateToOrigin(margin = 100): void {
         // this.scaleTo(1 / 55);
         this.translateTo({ x: margin, y: -margin + this.canvasRenderer.height });
     }
@@ -117,7 +117,7 @@ export class Viewport {
         this.pixiContainer.scale.y *= delta;
     }
 
-    public translateBy(x: number, y: number) {
+    public translateBy(x: number, y: number): void {
         this.pixiContainer.x += x;
         this.pixiContainer.y += y;
     }
@@ -126,7 +126,7 @@ export class Viewport {
         this.pixiContainer.rotation += rotation;
     }
 
-    public translateTo(point: { x: number, y: number }) {
+    public translateTo(point: { x: number, y: number }): void {
         this.pixiContainer.x = point.x;
         this.pixiContainer.y = point.y;
     }
