@@ -20,19 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bfc075f-512c-4bce-a183-0279cadd0a62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/canvas-interaction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/mouse-event-args.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/overlay.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport-drag.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport-interaction.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport-zoom.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/wheel-event-args.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/coordinate-origin.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/grid-container.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scaliro-pixi-viewport/canvas-renderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/canvas-renderer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/scaliro-pixi-viewport/viewport.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.js" afterDir="false" />
     </list>
@@ -84,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616061572619</updated>
-      <workItem from="1616061573983" duration="4660000" />
+      <workItem from="1616061573983" duration="6944000" />
     </task>
     <task id="LOCAL-00001" summary="project commit">
       <created>1616061821003</created>
@@ -100,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616061891516</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="overloay + viewport">
+      <created>1616070542268</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616070542268</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,16 +117,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="project commit" />
+    <MESSAGE value="overloay + viewport" />
+    <option name="LAST_COMMIT_MESSAGE" value="overloay + viewport" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1616061953740">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616061953740" />
-    <state x="872" y="420" key="Vcs.Push.Dialog.v2" timestamp="1616061881255">
+    <state x="872" y="420" key="Vcs.Push.Dialog.v2" timestamp="1616070543983">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="420" key="Vcs.Push.Dialog.v2/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616061881255" />
+    <state x="872" y="420" key="Vcs.Push.Dialog.v2/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616070543983" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1616071395190">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-1920.125.1920.1040/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1616071395190" />
   </component>
 </project>

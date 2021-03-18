@@ -3,6 +3,7 @@ import { CanvasRenderer } from "./canvas-renderer";
 import { ViewportDrag } from "./viewport-drag";
 import { ViewportZoom } from "./viewport-zoom";
 import { ViewportInteraction } from "./viewport-interaction";
+import { BehaviorSubject, Observable } from "rxjs";
 
 export class Viewport {
 
@@ -11,6 +12,9 @@ export class Viewport {
     private ticker: PIXI.Ticker;
 
     public interaction: ViewportInteraction;
+
+    private scaleSubject: BehaviorSubject<number> = new BehaviorSubject<number>(1.0);
+    public scale$: Observable<number> = this.scaleSubject.asObservable();
 
     constructor(private canvasRenderer: CanvasRenderer, private scaleMin: number = 0.001, private scaleMax: number = 10) {
         this.ticker = canvasRenderer.ticker;
@@ -30,6 +34,7 @@ export class Viewport {
         for (const scaleContainer of this.scaleContainers) {
             scaleContainer.scale.set(1 / value, 1 / value);
         }
+        this.scaleSubject.next(value);
     }
 
     public scaleBy(delta: number) {
@@ -38,6 +43,7 @@ export class Viewport {
             scaleContainer.scale.x *= 1 / delta;
             scaleContainer.scale.y *= 1 / delta;
         }
+        this.scaleSubject.next(this.scale);
     }
 
     public addContainer(container: PIXI.Container, layer = 0) {
