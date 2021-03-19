@@ -1,5 +1,5 @@
 ### Installation
-npm install @flippsor/viewport
+```npm install @flippsor/viewport```
 
 ### Code (Renderer + Viewport + Overlay)
 
