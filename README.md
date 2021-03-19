@@ -1,4 +1,7 @@
-# Renderer + Viewport + Overlay
+### Installation
+npm install @flippsor/viewport
+
+### Code (Renderer + Viewport + Overlay)
 
 ```javascript
 const renderer = new flup.CanvasRenderer(document.body, 0x393939);
