@@ -15,7 +15,7 @@ export class ViewportDrag  {
     private lastMouseX = 0;
     private lastMouseY = 0;
 
-    private translateDirty: boolean;
+    private translateDirty: boolean = false;
 
     private positionX = 0;
     private positionY = 0;

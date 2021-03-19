@@ -9,7 +9,6 @@ export class Viewport {
 
     private scaleContainers: PIXI.Container[] = [];
     private pixiContainer: PIXI.Container = new PIXI.Container();
-    private ticker: PIXI.Ticker;
 
     public interaction: ViewportInteraction;
 
@@ -17,7 +16,6 @@ export class Viewport {
     public scale$: Observable<number> = this.scaleSubject.asObservable();
 
     constructor(private canvasRenderer: CanvasRenderer, private scaleMin: number = 0.001, private scaleMax: number = 10) {
-        this.ticker = canvasRenderer.ticker;
         this.pixiContainer.sortableChildren = true;
         this.pixiContainer.scale.y = -1;
         this.canvasRenderer.addContainer(this.pixiContainer, 5);
