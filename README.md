@@ -1,5 +1,4 @@
-import * as PIXI from 'pixi.js';
-import * as canvas from '@flippsor/viewport';
+
 
 ### Installation
 ```npm install @flippsor/viewport```
@@ -7,6 +6,9 @@ import * as canvas from '@flippsor/viewport';
 ### Code (Renderer + Viewport + Overlay)
 
 ```javascript
+import * as PIXI from 'pixi.js';
+import * as canvas from '@flippsor/viewport';
+
 const renderer = new canvas.CanvasRenderer(document.body, 0x393939);
 
 const viewport = new canvas.Viewport(renderer);
